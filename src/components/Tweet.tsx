@@ -1,6 +1,10 @@
 import { ArrowsClockwise, ChatCircle, Heart } from "phosphor-react";
 
-const Tweet = () => {
+interface TweetProps {
+  content: string
+}
+
+export function Tweet(props:TweetProps) {
   return (
     <a
       href="#"
@@ -58,4 +62,3 @@ const Tweet = () => {
   );
 };
 
-export default Tweet;

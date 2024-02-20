@@ -1,12 +1,21 @@
 import { Image } from "phosphor-react";
 import Tweet from "./Tweet";
 import Header from "./Header";
+import Separator from "./utils/Separator";
+
+
+const tweets = [
+  'nmeu primeiro tweet',
+  'teste',
+  'deu certo'
+]
 
 const Main = () => {
   return (
     <div className=" border-l border-r border-solid border-gray-300">
       <main className="">
-      <Header/>
+      <Header foryouText="Foryou" followingText="Following" />
+
         <form action="" className="p-5 py-4 flex flex-col gap-[8px]">
           <label htmlFor="" className="flex gap-[12px] items-center">
             <img
@@ -31,7 +40,7 @@ const Main = () => {
             Tweet
           </button>
         </form>
-        <div className="bg-f7f9fa border-t border-solid border-gray-300 border-b h-1.5"/>
+        <Separator/>
         <Tweet/>
         <Tweet/>
         <Tweet/>
