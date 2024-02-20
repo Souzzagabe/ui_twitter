@@ -1,19 +1,12 @@
-import { Gear, Image, Gif } from "phosphor-react";
+import { Image } from "phosphor-react";
+import Tweet from "./Tweet";
+import Header from "./Header";
 
 const Main = () => {
   return (
     <div className=" border-l border-r border-solid border-gray-300">
       <main className="">
-        <div
-          className="text-white py-6 px-5 flex items-center justify-evenly size-5 font-[700]
-      border-b border-solid border-gray-300 w-full h-16"
-        >
-          <div className="flex w-full justify-center gap-[200px]">
-            <p className="size-5">Foryou</p>
-            <p className="size-5">Following</p>
-          </div>
-          <Gear className="w-5 h-5 cursor-pointer" />
-        </div>
+      <Header/>
         <form action="" className="p-5 py-4 flex flex-col gap-[8px]">
           <label htmlFor="" className="flex gap-[12px] items-center">
             <img
@@ -38,6 +31,11 @@ const Main = () => {
             Tweet
           </button>
         </form>
+        <div className="bg-f7f9fa border-t border-solid border-gray-300 border-b h-1.5"/>
+        <Tweet/>
+        <Tweet/>
+        <Tweet/>
+        <Tweet/>
       </main>
     </div>
   );
