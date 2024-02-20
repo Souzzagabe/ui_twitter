@@ -1,4 +1,3 @@
-import React from "react";
 import { Gear, Image, Gif } from "phosphor-react";
 
 const Main = () => {
