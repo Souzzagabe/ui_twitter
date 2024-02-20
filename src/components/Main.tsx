@@ -3,19 +3,14 @@ import Tweet from "./Tweet";
 import Header from "./Header";
 import Separator from "./utils/Separator";
 
-
-const tweets = [
-  'nmeu primeiro tweet',
-  'teste',
-  'deu certo'
-]
+const tweets = ["nmeu primeiro tweet", "teste", "deu certo"];
 
 const Main = () => {
   return (
-    <div className=" border-l border-r border-solid border-gray-300">
+    <div className=" border-l border-r border-solid border-gray-800">
       <main className="">
-      <Header foryouText="Foryou" followingText="Following" />
-
+        <Header foryouText="Foryou" followingText="Following" isStatusContext={false} />
+        
         <form action="" className="p-5 py-4 flex flex-col gap-[8px]">
           <label htmlFor="" className="flex gap-[12px] items-center">
             <img
@@ -40,11 +35,11 @@ const Main = () => {
             Tweet
           </button>
         </form>
-        <Separator/>
-        <Tweet/>
-        <Tweet/>
-        <Tweet/>
-        <Tweet/>
+        <Separator />
+
+        {tweets.map((tweet) => {
+          return <Tweet key={tweet} content={tweet} />;
+        })}
       </main>
     </div>
   );

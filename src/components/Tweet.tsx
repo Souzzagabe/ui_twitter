@@ -4,11 +4,11 @@ interface TweetProps {
   content: string
 }
 
-export function Tweet(props:TweetProps) {
+export default function Tweet(props: TweetProps) {
   return (
     <a
       href="#"
-      className="p-6 px-5 text-white grid grid-cols-[3rem,1fr] gap-3 border-b border-solid border-gray-300 no-underline"
+      className="p-6 px-5 text-white grid grid-cols-[3rem,1fr] gap-3 border-b border-solid border-gray-800 no-underline"
     >
       <img
         src="https://github.com/Souzzagabe.png"
@@ -23,10 +23,7 @@ export function Tweet(props:TweetProps) {
           </span>
         </div>
         <p className="leading-5">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati
-          blanditiis suscipit mollitia, laudantium porro ipsum molestiae, atque,
-          repudiandae minima accusamus culpa consequatur ratione odio voluptas
-          earum labore ea quisquam reiciendis.
+          {props.content}
         </p>
         <div className="gap-12 flex items-center mt-3">
           <button
