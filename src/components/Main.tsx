@@ -22,7 +22,7 @@ const Main = () => {
               name=""
               id="tweet"
               placeholder="Whats happening?!"
-              className="flex-1 text-lg font-[300] rounded-xl focus:outline-none h-8 text-left px-4 
+              className="flex-1 text-lg font-[500] rounded-xl focus:outline-none h-8 text-left px-4 
               bg-black border border-gray-300 mx-auto"
             />
             <Image className="text-customBlue font-bold w-8 h-8 cursor-pointer" />

@@ -6,6 +6,7 @@ interface TweetProps {
 }
 
 export default function Tweet(props: TweetProps) {
+
   return (
     <Link
       to="/tweet"
