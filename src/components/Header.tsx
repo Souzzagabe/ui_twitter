@@ -11,6 +11,7 @@ export default function Header({
   followingText,
   isStatusContext,
 }: HeaderProps) {
+  
   return (
     <div
       className={`text-white py-6 px-5 flex items-center justify-between font-bold border-b border-solid border-gray-800 w-full h-16 ${
