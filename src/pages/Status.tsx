@@ -1,10 +1,35 @@
 import Header from "../components/Header";
 import Separator from "../components/utils/Separator";
 import Tweet from "../components/Tweet";
+import { FormEvent, KeyboardEvent, useState } from "react";
 
-const answers = ["concordo", "olha, faz sentido!", "parabéns"];
 
 export function Status() {
+
+  const [newAnswer, setNewAnswer] = useState('')
+  const [answers, setAnswers] = useState([
+    "concordo", "olha, faz sentido!", "parabéns"
+  ])
+
+  const createNewAnswer = (event: FormEvent) => {
+    event.preventDefault();
+
+    if (!newAnswer) {
+        alert("Escreva um tweet");
+        return;
+    }
+
+    setAnswers([newAnswer, ...answers]);
+    setNewAnswer('');
+};
+
+const handleHotKeySubmit = (event: KeyboardEvent) => {
+  if(event.key === 'Enter' && event.ctrlKey ) {
+    setAnswers([newAnswer, ...answers]);
+    setNewAnswer('');
+  }
+}
+
   return (
     <main className="border-l border-r border-solid border-gray-800">
       <Header foryouText="Post" isStatusContext={true} />
@@ -14,7 +39,7 @@ export function Status() {
         sit cupiditate. Porro temporibus itaque id ipsa. Quis eligendi debitis a neque?
       " />
       <Separator />
-      <form action="" className="p-5 py-4 flex flex-col gap-[8px]">
+      <form  onSubmit={createNewAnswer} action="" className="p-5 py-4 flex flex-col gap-[8px]">
         <label htmlFor="" className="flex gap-[12px] items-center">
           <img
             src="https://github.com/Souzzagabe.png"
@@ -24,7 +49,12 @@ export function Status() {
           <textarea
             name=""
             id="tweet"
+            value={newAnswer}
+            onKeyDown={handleHotKeySubmit}
             placeholder="Post your reply"
+            onChange={(event) => {
+              setNewAnswer(event.target.value)
+            }}
             className="flex-1 text-lg font-[500] rounded-xl focus:outline-none h-8 text-left px-4 
               bg-black border border-gray-300 mx-auto text-white"
           />

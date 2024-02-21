@@ -2,7 +2,7 @@ import { Image } from "phosphor-react";
 import Tweet from "./Tweet";
 import Header from "./Header";
 import Separator from "./utils/Separator";
-import { FormEvent, useState } from "react";
+import { FormEvent, KeyboardEvent, useState } from "react";
 
 const Main = () => {
   const [newTweet, setNewTweet] = useState('')
@@ -22,7 +22,12 @@ const Main = () => {
     setNewTweet('');
 };
 
-
+const handleHotKeySubmit = (event: KeyboardEvent) => {
+  if(event.key === 'Enter' && event.ctrlKey ) {
+    setTweets([newTweet, ...tweets]);
+    setNewTweet('');
+  }
+}
 
   return (
 
@@ -41,6 +46,7 @@ const Main = () => {
               name=""
               id="tweet"
               value={newTweet}
+              onKeyDown={handleHotKeySubmit}
               onChange={(event) => {
                 setNewTweet(event.target.value)
               }}
