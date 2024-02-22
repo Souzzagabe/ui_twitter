@@ -11,7 +11,7 @@ export default function Header({
   followingText,
   isStatusContext,
 }: HeaderProps) {
-  
+
   return (
     <div
       className={`text-white py-6 px-5 flex items-center justify-between font-bold border-b border-solid border-gray-800 w-full h-16 ${
@@ -25,9 +25,9 @@ export default function Header({
             : "flex gap-16 items-center justify-center mx-auto"
         }
       >
-        <p className="text-xl cursor-pointer">{foryouText}</p>
+        <p className="text-xl cursor-pointer sm:text-lg">{foryouText}</p>
         {followingText && (
-          <p className="text-xl cursor-pointer ">{followingText}</p>
+          <p className="text-xl cursor-pointer sm:text-lg">{followingText}</p>
         )}
       </div>
       <Gear className="w-5 h-5 cursor-pointer" />

@@ -20,7 +20,7 @@ export default function Tweet(props: TweetProps) {
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-1">
           <strong>Gabriel Souza</strong>
-          <span className="text-[0.875rem] text-slate-400 text-lg">
+          <span className="text-[0.875rem] text-slate-400 text-lg sm:text-sm">
             @Souzzagabe
           </span>
         </div>

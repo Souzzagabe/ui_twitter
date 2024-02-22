@@ -30,6 +30,7 @@ const handleHotKeySubmit = (event: KeyboardEvent) => {
   }
 }
 
+
   return (
     <main className="border-l border-r border-solid border-gray-800">
       <Header foryouText="Post" isStatusContext={true} />
@@ -55,8 +56,8 @@ const handleHotKeySubmit = (event: KeyboardEvent) => {
             onChange={(event) => {
               setNewAnswer(event.target.value)
             }}
-            className="flex-1 text-lg font-[500] rounded-xl focus:outline-none h-8 text-left px-4 
-              bg-black border border-gray-300 mx-auto text-white"
+            className="flex-1 text-lg font-[500] rounded-xl focus:outline-none h-14 text-left px-3 
+            bg-black border border-gray-300 mx-auto text-white placeholder-center"
           />
         <button
           type="submit"
